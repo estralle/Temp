@@ -1,0 +1,54 @@
+{
+  "variables_to_monitor": ["DTL1BackT","DTL2BackT","DTL3BackT","DTL4BackT","KlyT1","KlyT2","RFRefT1","RFQWallInT","RFQVaneInT","RFQWallBackT","BnchT1"],
+  "variables_to_monitor_Checklater": ["DbnchT1","RFRefWallT1"], 
+  "models_and_scalers": {
+    "DTL1BackT": ["/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters.joblib", "/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters.joblib"],
+    "DTL2BackT": ["/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters.joblib", "/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters.joblib"],
+    "DTL3BackT": ["/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters.joblib", "/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters.joblib"],
+    "DTL4BackT": ["/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters.joblib", "/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters.joblib"],
+    "RFQVaneInT": ["/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters.joblib", "/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters.joblib"],
+    "RFQWallBackT": ["/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters.joblib", "/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters.joblib"],
+    "RFQWallInT": ["/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters.joblib", "/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters.joblib"],
+    "BnchT1": ["/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters.joblib", "/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters.joblib"],
+    "DbnchT1": ["/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters.joblib", "/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters.joblib"],
+    "RFRefT1": ["/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters.joblib", "/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters.joblib"],
+    "RFRefWallT1": ["/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters.joblib", "/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters.joblib"],
+    "KlyT1": ["/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters.joblib", "/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters.joblib"],
+    "KlyT2": ["/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters.joblib", "/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters.joblib"]
+  },
+ 
+  "PVname": {
+    "DTL1BackT": "UTL_LINAC_CW::DTL1:BackT:ai",
+    "DTL2BackT": "UTL_LINAC_CW::DTL2:BackT:ai",
+    "DTL3BackT": "UTL_LINAC_CW::DTL3:BackT:ai",
+    "DTL4BackT": "UTL_LINAC_CW::DTL4:BackT:ai",
+    "KlyT1": "UTL_LINAC_CW::Kly:T1:ai",
+    "KlyT2": "UTL_LINAC_CW::Kly:T2:ai",
+    "RFRefT1": "UTL_LINAC_CW::RFRef:T1:ai",
+    "RFRefWallT1": "UTL_LINAC_CW::RFRefWall:T:ai",
+    "RFQWallInT": "UTL_LINAC_CW::RFQWall:InT:ai",
+    "RFQVaneInT": "UTL_LINAC_CW::RFQVane:InT:ai",
+    "RFQWallBackT": "UTL_LINAC_CW::RFQWall:BackT:ai",
+    "BnchT1": "UTL_LINAC_CW::Bnch:BackT:ai",
+    "DbnchT1": "UTL_LINAC_CW::Dbnch:BackT:ai"
+  },
+
+  "Outputname": {
+    "DTL1BackT": "DTL1:BackT::Alarm:Tmp",
+    "DTL2BackT": "DTL2:BackT::Alarm:Tmp",
+    "DTL3BackT": "DTL3:BackT::Alarm:Tmp",
+    "DTL4BackT": "DTL4:BackT::Alarm:Tmp",
+    "KlyT1": "Kly:T1::Alarm:Tmp",
+    "KlyT2": "Kly:T2::Alarm:Tmp",
+    "RFRefT1": "RFRef:T1::Alarm:Tmp",
+    "RFRefWallT1": "RFRefWall:T1::Alarm:Tmp",
+    "RFQWallInT": "RFQWall:InT::Alarm:Tmp",
+    "RFQVaneInT": "RFQVane:InT::Alarm:Tmp",
+    "RFQWallBackT": "RFQWall:BackT::Alarm:Tmp",
+    "BnchT1": "Bnch:T1::Alarm:Tmp",
+    "DbnchT1": "Dbnch:T1::Alarm:Tmp"
+  },
+  "Freq":{"initial":1, "collect":30}
+ 
+}
+

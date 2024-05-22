@@ -1,0 +1,9 @@
+
+
+This project aims to monitor multiple process variables (PVs) and use trained models to detect anomalies. The code includes the following modules:
+
+    DataCollector: To collect real-time data from EPICS.
+    ModelEvaluator: To evaluate if the input vector is normal or anomalous using trained models.
+    PVs: Defines the PV class, using PV channels to get and put data.
+    Monitor: Defines a process to monitor a PV, initializes a data vector with real-time data, normalizes the data, and then rolls the vector at a specified frequency (e.g., every 30 seconds) to get a new vector. It then applies ModelEvaluator to determine if the data is normal.
+Please check the config file before running the code.
