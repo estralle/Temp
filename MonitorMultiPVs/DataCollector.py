@@ -30,7 +30,8 @@ class DataCollector:
         """
         pvname = PVname.name
         if initial:
-            data_vector = np.zeros(vector_length)  # Initialize data vector for initial collection
+            #data_vector = np.zeros(vector_length)# Initialize data vector for initial collection
+            data_vector = np.zeros(vector_length, dtype=np.float64)
             time_vector = []  # Initialize time vector
 
         next_target_time = self._get_next_target_time(Freq)        
@@ -38,7 +39,8 @@ class DataCollector:
             self._wait_until(next_target_time)
             current_time = strftime("%Y-%m-%d %H:%M:%S", localtime())
             try:
-                data_point = PVname.get()
+                data_point_tmp = PVname.get(timeout=8.0)
+                data_point = data_point_tmp * 10**5
                 if not initial:
                     data_point = (data_point - min_value) / (max_value - min_value)
                     data_vector = np.roll(data_vector, -1)

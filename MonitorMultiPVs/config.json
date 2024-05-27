@@ -2,19 +2,19 @@
   "variables_to_monitor": ["DTL1BackT","DTL2BackT","DTL3BackT","DTL4BackT","KlyT1","KlyT2","RFRefT1","RFQWallInT","RFQVaneInT","RFQWallBackT","BnchT1"],
   "variables_to_monitor_Checklater": ["DbnchT1","RFRefWallT1"], 
   "models_and_scalers": {
-    "DTL1BackT": ["/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters.joblib", "/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters.joblib"],
-    "DTL2BackT": ["/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters.joblib", "/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters.joblib"],
-    "DTL3BackT": ["/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters.joblib", "/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters.joblib"],
-    "DTL4BackT": ["/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters.joblib", "/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters.joblib"],
-    "RFQVaneInT": ["/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters.joblib", "/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters.joblib"],
-    "RFQWallBackT": ["/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters.joblib", "/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters.joblib"],
-    "RFQWallInT": ["/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters.joblib", "/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters.joblib"],
-    "BnchT1": ["/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters.joblib", "/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters.joblib"],
-    "DbnchT1": ["/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters.joblib", "/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters.joblib"],
-    "RFRefT1": ["/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters.joblib", "/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters.joblib"],
-    "RFRefWallT1": ["/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters.joblib", "/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters.joblib"],
-    "KlyT1": ["/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters.joblib", "/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters.joblib"],
-    "KlyT2": ["/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters.joblib", "/home/pengn/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters.joblib"]
+    "DTL1BackT": ["/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters.joblib", "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters.joblib"],
+    "DTL2BackT": ["/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters.joblib", "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters.joblib"],
+    "DTL3BackT": ["/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters.joblib", "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters.joblib"],
+    "DTL4BackT": ["/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters.joblib", "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters.joblib"],
+    "RFQVaneInT": ["/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters.joblib", "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters.joblib"],
+    "RFQWallBackT": ["/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters.joblib", "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters.joblib"],
+    "RFQWallInT": ["/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters.joblib", "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters.joblib"],
+    "BnchT1": ["/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters.joblib", "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters.joblib"],
+    "DbnchT1": ["/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters.joblib", "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters.joblib"],
+    "RFRefT1": ["/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters.joblib", "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters.joblib"],
+    "RFRefWallT1": ["/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters.joblib", "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters.joblib"],
+    "KlyT1": ["/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters.joblib", "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters.joblib"],
+    "KlyT2": ["/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters.joblib", "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters.joblib"]
   },
  
   "PVname": {
@@ -48,7 +48,7 @@
     "BnchT1": "Bnch:T1::Alarm:Tmp",
     "DbnchT1": "Dbnch:T1::Alarm:Tmp"
   },
-  "Freq":{"initial":1, "collect":30}
+  "Freq":{"initial":0.1, "collect":1}
  
 }
 
