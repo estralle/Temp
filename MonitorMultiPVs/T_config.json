@@ -1,0 +1,224 @@
+{
+  "variables_to_monitor": [
+    "LINAC_KlyT2",
+    "LINAC_KlyT1",
+    "LINAC_DTL2BackT",
+    "LINAC_RFRefWallT1",
+    "LINAC_DbnchT1",
+    "LINAC_RFRefT1",
+    "LINAC_DTL1InT",
+    "LINAC_DTL3BackT",
+    "LINAC_RFQWallInT",
+    "LINAC_RFQWallBackT",
+    "LINAC_DTL2InT",
+    "LINAC_RFQVaneInT",
+    "LINAC_DTL4InT",
+    "LINAC_DTL1BackT",
+    "LINAC_DTL3InT",
+    "LINAC_BnchBackT",
+    "LINAC_BnchT1",
+    "LINAC_DTL4BackT",
+    "RCS_RFCavBackT1",
+    "RCS_BCPSBackT1",
+    "RCS_IEPPST1",
+    "RCS_MagInT1",
+    "RCS_BCPSInT1",
+    "RCS_RFPSInT1",
+    "RCS_MagBackT1",
+    "RCS_RFCavInT1",
+    "LRBT_MagInT1",
+    "LRBT_MagBackT1",
+    "RTBT_MagInT1",
+    "RTBT_MagBackT1"
+  ],
+  "models_and_scalers": {
+    "LINAC_KlyT2": [
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters_forT.joblib",
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters_forT.joblib"
+    ],
+    "LINAC_KlyT1": [
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters_forT.joblib",
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters_forT.joblib"
+    ],
+    "LINAC_DTL2BackT": [
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters_forT.joblib",
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters_forT.joblib"
+    ],
+    "LINAC_RFRefWallT1": [
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters_forT.joblib",
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters_forT.joblib"
+    ],
+    "LINAC_DbnchT1": [
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters_forT.joblib",
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters_forT.joblib"
+    ],
+    "LINAC_RFRefT1": [
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters_forT.joblib",
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters_forT.joblib"
+    ],
+    "LINAC_DTL1InT": [
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters_forT.joblib",
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters_forT.joblib"
+    ],
+    "LINAC_DTL3BackT": [
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters_forT.joblib",
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters_forT.joblib"
+    ],
+    "LINAC_RFQWallInT": [
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters_forT.joblib",
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters_forT.joblib"
+    ],
+    "LINAC_RFQWallBackT": [
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters_forT.joblib",
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters_forT.joblib"
+    ],
+    "LINAC_DTL2InT": [
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters_forT.joblib",
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters_forT.joblib"
+    ],
+    "LINAC_RFQVaneInT": [
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters_forT.joblib",
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters_forT.joblib"
+    ],
+    "LINAC_DTL4InT": [
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters_forT.joblib",
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters_forT.joblib"
+    ],
+    "LINAC_DTL1BackT": [
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters_forT.joblib",
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters_forT.joblib"
+    ],
+    "LINAC_DTL3InT": [
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters_forT.joblib",
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters_forT.joblib"
+    ],
+    "LINAC_BnchBackT": [
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters_forT.joblib",
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters_forT.joblib"
+    ],
+    "LINAC_BnchT1": [
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters_forT.joblib",
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters_forT.joblib"
+    ],
+    "LINAC_DTL4BackT": [
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters_forT.joblib",
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters_forT.joblib"
+    ],
+    "RCS_RFCavBackT1": [
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters_forT.joblib",
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters_forT.joblib"
+    ],
+    "RCS_BCPSBackT1": [
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters_forT.joblib",
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters_forT.joblib"
+    ],
+    "RCS_IEPPST1": [
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters_forT.joblib",
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters_forT.joblib"
+    ],
+    "RCS_MagInT1": [
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters_forT.joblib",
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters_forT.joblib"
+    ],
+    "RCS_BCPSInT1": [
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters_forT.joblib",
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters_forT.joblib"
+    ],
+    "RCS_RFPSInT1": [
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters_forT.joblib",
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters_forT.joblib"
+    ],
+    "RCS_MagBackT1": [
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters_forT.joblib",
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters_forT.joblib"
+    ],
+    "RCS_RFCavInT1": [
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters_forT.joblib",
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters_forT.joblib"
+    ],
+    "LRBT_MagInT1": [
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters_forT.joblib",
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters_forT.joblib"
+    ],
+    "LRBT_MagBackT1": [
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters_forT.joblib",
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters_forT.joblib"
+    ],
+    "RTBT_MagInT1": [
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters_forT.joblib",
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters_forT.joblib"
+    ],
+    "RTBT_MagBackT1": [
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters_forT.joblib",
+      "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters_forT.joblib"
+    ]
+  },
+  "PVname": {
+    "LINAC_KlyT2": "UTL_LINAC_CW::Kly:T2:ai",
+    "LINAC_KlyT1": "UTL_LINAC_CW::Kly:T1:ai",
+    "LINAC_DTL2BackT": "UTL_LINAC_CW::DTL2:BackT:ai",
+    "LINAC_RFRefWallT1": "UTL_LINAC_CW::RFRefWall:T1:ai",
+    "LINAC_DbnchT1": "UTL_LINAC_CW::Dbnch:T1:ai",
+    "LINAC_RFRefT1": "UTL_LINAC_CW::RFRef:T1:ai",
+    "LINAC_DTL1InT": "UTL_LINAC_CW::DTL1:InT:ai",
+    "LINAC_DTL3BackT": "UTL_LINAC_CW::DTL3:BackT:ai",
+    "LINAC_RFQWallInT": "UTL_LINAC_CW::RFQWall:InT:ai",
+    "LINAC_RFQWallBackT": "UTL_LINAC_CW::RFQWall:BackT:ai",
+    "LINAC_DTL2InT": "UTL_LINAC_CW::DTL2:InT:ai",
+    "LINAC_RFQVaneInT": "UTL_LINAC_CW::RFQVane:InT:ai",
+    "LINAC_DTL4InT": "UTL_LINAC_CW::DTL4:InT:ai",
+    "LINAC_DTL1BackT": "UTL_LINAC_CW::DTL1:BackT:ai",
+    "LINAC_DTL3InT": "UTL_LINAC_CW::DTL3:InT:ai",
+    "LINAC_BnchBackT": "UTL_LINAC_CW::Bnch:BackT:ai",
+    "LINAC_BnchT1": "UTL_LINAC_CW::Bnch:T1:ai",
+    "LINAC_DTL4BackT": "UTL_LINAC_CW::DTL4:BackT:ai",
+    "RCS_RFCavBackT1": "UTL_RCS_CW::RFCav:BackT1:ai",
+    "RCS_BCPSBackT1": "UTL_RCS_CW::BCPS:BackT1:ai",
+    "RCS_IEPPST1": "UTL_RCS_CW::IEPPS:T1:ai",
+    "RCS_MagInT1": "UTL_RCS_CW::Mag:InT1:ai",
+    "RCS_BCPSInT1": "UTL_RCS_CW::BCPS:InT1:ai",
+    "RCS_RFPSInT1": "UTL_RCS_CW::RFPS:InT1:ai",
+    "RCS_MagBackT1": "UTL_RCS_CW::Mag:BackT1:ai",
+    "RCS_RFCavInT1": "UTL_RCS_CW::RFCav:InT1:ai",
+    "LRBT_MagInT1": "UTL_LRBT_CW::Mag:InT1:ai",
+    "LRBT_MagBackT1": "UTL_LRBT_CW::Mag:BackT1:ai",
+    "RTBT_MagInT1": "UTL_RTBT_CW::Mag:InT1:ai",
+    "RTBT_MagBackT1": "UTL_RTBT_CW::Mag:BackT1:ai"
+  },
+  "Outputname": {
+    "LINAC_KlyT2": "LINAC:KlyT2::Alarm:Tmp",
+    "LINAC_KlyT1": "LINAC:KlyT1::Alarm:Tmp",
+    "LINAC_DTL2BackT": "LINAC:DTL2BackT::Alarm:Tmp",
+    "LINAC_RFRefWallT1": "LINAC:RFRefWallT1::Alarm:Tmp",
+    "LINAC_DbnchT1": "LINAC:DbnchT1::Alarm:Tmp",
+    "LINAC_RFRefT1": "LINAC:RFRefT1::Alarm:Tmp",
+    "LINAC_DTL1InT": "LINAC:DTL1InT::Alarm:Tmp",
+    "LINAC_DTL3BackT": "LINAC:DTL3BackT::Alarm:Tmp",
+    "LINAC_RFQWallInT": "LINAC:RFQWallInT::Alarm:Tmp",
+    "LINAC_RFQWallBackT": "LINAC:RFQWallBackT::Alarm:Tmp",
+    "LINAC_DTL2InT": "LINAC:DTL2InT::Alarm:Tmp",
+    "LINAC_RFQVaneInT": "LINAC:RFQVaneInT::Alarm:Tmp",
+    "LINAC_DTL4InT": "LINAC:DTL4InT::Alarm:Tmp",
+    "LINAC_DTL1BackT": "LINAC:DTL1BackT::Alarm:Tmp",
+    "LINAC_DTL3InT": "LINAC:DTL3InT::Alarm:Tmp",
+    "LINAC_BnchBackT": "LINAC:BnchBackT::Alarm:Tmp",
+    "LINAC_BnchT1": "LINAC:BnchT1::Alarm:Tmp",
+    "LINAC_DTL4BackT": "LINAC:DTL4BackT::Alarm:Tmp",
+    "RCS_RFCavBackT1": "RCS:RFCavBackT1::Alarm:Tmp",
+    "RCS_BCPSBackT1": "RCS:BCPSBackT1::Alarm:Tmp",
+    "RCS_IEPPST1": "RCS:IEPPST1::Alarm:Tmp",
+    "RCS_MagInT1": "RCS:MagInT1::Alarm:Tmp",
+    "RCS_BCPSInT1": "RCS:BCPSInT1::Alarm:Tmp",
+    "RCS_RFPSInT1": "RCS:RFPSInT1::Alarm:Tmp",
+    "RCS_MagBackT1": "RCS:MagBackT1::Alarm:Tmp",
+    "RCS_RFCavInT1": "RCS:RFCavInT1::Alarm:Tmp",
+    "LRBT_MagInT1": "LRBT:MagInT1::Alarm:Tmp",
+    "LRBT_MagBackT1": "LRBT:MagBackT1::Alarm:Tmp",
+    "RTBT_MagInT1": "RTBT:MagInT1::Alarm:Tmp",
+    "RTBT_MagBackT1": "RTBT:MagBackT1::Alarm:Tmp"
+  },
+  "Freq": {
+    "initial": 1,
+    "collect": 30
+  }
+}

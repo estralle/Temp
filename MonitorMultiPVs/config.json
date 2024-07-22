@@ -1,5 +1,6 @@
 {
-  "variables_to_monitor": ["DTL1BackT","DTL2BackT","DTL3BackT","DTL4BackT","KlyT1","KlyT2","RFRefT1","RFQWallInT","RFQVaneInT","RFQWallBackT","BnchT1"],
+  "variables_to_monitor":["DTL4BackT"],
+  "variables_to_monitor_waittocheck": ["DTL1BackT","DTL2BackT","DTL3BackT","DTL4BackT","KlyT1","KlyT2","RFRefT1","RFQWallInT","RFQVaneInT","RFQWallBackT","BnchT1"],
   "variables_to_monitor_Checklater": ["DbnchT1","RFRefWallT1"], 
   "models_and_scalers": {
     "DTL1BackT": ["/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_model_train_5cluster_with2Feauters.joblib", "/home/pengna/Workspace/General_info/models/DTL4BackT_kmeans_scaler_with2Feauters.joblib"],
