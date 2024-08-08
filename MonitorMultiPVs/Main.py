@@ -17,7 +17,7 @@ import threading
 # 设置环境变量
 os.environ["EPICS_CA_ADDR_LIST"] = "10.1.236.84 10.1.44.232 "
 os.environ["EPICS_CA_AUTO_ADDR_LIST"] = "NO"  # 如果需要，也可以设置其他相关的环境变量
-os.environ["EPICS_CA_SERVER_PORT"] = "5066"
+#os.environ["EPICS_CA_SERVER_PORT"] = "5066"
 
 def main():
     
@@ -46,3 +46,6 @@ def main():
        future.result()
        
     ca.finalize_libca()
+    
+if __name__ == "__main__":
+    main()

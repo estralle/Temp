@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PV Monitor</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        .pv-item {
+            border: 1px solid #dee2e6;
+            border-radius: 0.25rem;
+            padding: 15px;
+            margin-bottom: 10px;
+            background-color: #ffffff;
+            transition: background-color 0.3s;
+        }
+        .pv-item.abnormal {
+            background-color: #f8d7da;
+        }
+        .pv-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .pv-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .pv-name {
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center">PV Monitor</h1>
+    <div id="pv-list" class="list-group">
+        <!-- PVs will be listed here -->
+    </div>
+    <h2 class="text-center">Abnormal PVs: <span id="abnormal-count">0</span></h2>
+</div>
+
+<script>
+    $(document).ready(function() {
+        var socket = io();
+
+        socket.on('update_data', function(data) {
+            var variableName = data.variable_name;
+            var value = data.value;
+            var pvItem = $('#pv-' + variableName);
+            if (pvItem.length === 0) {
+                pvItem = $(
+                    '<div class="list-group-item pv-item" id="pv-' + variableName + '">' +
+                        '<div class="pv-header">' +
+                            '<span class="pv-name">' + variableName + '</span>' +
+                            '<span class="pv-value">' + value + '</span>' +
+                        '</div>' +
+                    '</div>'
+                );
+                $('#pv-list').append(pvItem);
+            } else {
+                pvItem.find('.pv-value').text(value);
+            }
+
+            if (value == '1') {
+                pvItem.addClass('abnormal');
+            } else {
+                pvItem.removeClass('abnormal');
+            }
+
+            updateAbnormalCount();
+        });
+
+        function updateAbnormalCount() {
+            var abnormalCount = 0;
+            $('.pv-value').each(function() {
+                if ($(this).text() == '1') {
+                    abnormalCount++;
+                }
+            });
+            $('#abnormal-count').text(abnormalCount);
+        }
+    });
+</script>
+</body>
+</html>
