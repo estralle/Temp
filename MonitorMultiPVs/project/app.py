@@ -87,4 +87,4 @@ if __name__ == '__main__':
     for variable_name, pv_name in pvs_to_monitor.items():
         thread = threading.Thread(target=monitor_pv, args=(variable_name, pv_name))
         thread.start()
-    socketio.run(app, host='0.0.0.0', port=5000)
+    socketio.run(app, host='0.0.0.0', port=5009)

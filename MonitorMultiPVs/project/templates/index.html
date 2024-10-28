@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>PV Monitor</title>
+    <title>水温监测</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
@@ -16,73 +16,183 @@
         .pv-item {
             border: 1px solid #dee2e6;
             border-radius: 0.25rem;
-            padding: 15px;
+            padding: 10px;
             margin-bottom: 10px;
             background-color: #ffffff;
             transition: background-color 0.3s;
-        }
-        .pv-item.abnormal {
-            background-color: #f8d7da;
         }
         .pv-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        .pv-value {
-            font-size: 1.5rem;
-            font-weight: bold;
+        .pv-button {
+            width: 50px;
+            height: 30px;
+            border: none;
+            border-radius: 0.25rem;
+        }
+        .pv-button.green {
+            background-color: #28a745;
+        }
+        .pv-button.red {
+            background-color: #dc3545;
         }
         .pv-name {
-            font-size: 1.25rem;
+            font-size: 1rem;
             font-weight: bold;
+        }
+        .abnormal-count {
+            color: red;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        h2 {
+            font-size: 1.25rem;
+        }
+        .alarm-time {
+            font-size: 0.9rem;
+            color: #6c757d;
+            margin-left: auto;
+        }
+        /* Tab styles */
+        .nav-tabs .nav-link.active {
+            font-weight: bold;
+            color: #495057;
+        }
+        .tab-content {
+            margin-top: 20px;
+        }
+        .last-alarm-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px;
+            border-bottom: 1px solid #dee2e6;
         }
     </style>
 </head>
 <body>
 <div class="container">
-    <h1 class="text-center">PV Monitor</h1>
-    <div id="pv-list" class="list-group">
-        <!-- PVs will be listed here -->
+    <h1 class="text-center">水温监测</h1>
+    
+    <!-- Tabs navigation -->
+    <ul class="nav nav-tabs" id="pvTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="current-status-tab" data-toggle="tab" href="#current-status" role="tab">当前状态</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="last-alarm-tab" data-toggle="tab" href="#last-alarm" role="tab">预警记录</a>
+        </li>
+    </ul>
+
+    <!-- Tab content -->
+    <div class="tab-content">
+        <!-- Current Status Tab -->
+        <div class="tab-pane fade show active" id="current-status" role="tabpanel">
+            <h2 class="abnormal-count">Total Abnormal PVs: <span id="abnormal-count">0</span></h2>
+            <div id="pv-list" class="list-group">
+                <!-- PVs will be listed here -->
+            </div>
+        </div>
+
+        <!-- Last Alarm Time Tab -->
+        <div class="tab-pane fade" id="last-alarm" role="tabpanel">
+            <h2>预警记录</h2>
+            <div id="last-alarm-list" class="list-group">
+                <!-- Initialize all PVs with "无" as the last alarm time -->
+            </div>
+        </div>
     </div>
-    <h2 class="text-center">Abnormal PVs: <span id="abnormal-count">0</span></h2>
 </div>
 
+<!-- Bootstrap JS for tab switching -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script>
     $(document).ready(function() {
         var socket = io();
+        var lastAlarmTimes = {}; // To store the last time each PV had a value of 1
 
+        // 同步并排序“预警记录”页面的PV列表
+        function syncLastAlarmList() {
+            $('#last-alarm-list').empty(); // 清空预警记录列表
+
+            $('#pv-list .pv-item').each(function() {
+                var pvName = $(this).find('.pv-name').text();
+                var lastTime = lastAlarmTimes[pvName] || "无"; // 默认显示“无”作为初始值
+
+                var lastAlarmItem = $(
+                    '<div class="list-group-item last-alarm-item" id="last-alarm-' + pvName + '">' +
+                        '<span class="pv-name">' + pvName + '</span>' +
+                        '<span class="alarm-time">' + lastTime + '</span>' +
+                    '</div>'
+                );
+                $('#last-alarm-list').append(lastAlarmItem);
+            });
+        }
+
+        // 初始化并按状态排序当前状态的PV列表
+        function initializePVItem(pvName) {
+            lastAlarmTimes[pvName] = "无"; // 设置初始报警时间为“无”
+
+            // 在“当前状态”页面添加PV项
+            var pvItem = $(
+                '<div class="list-group-item pv-item" id="pv-' + pvName + '">' +
+                    '<div class="pv-header">' +
+                        '<span class="pv-name">' + pvName + '</span>' +
+                        '<span class="pv-value"><button class="pv-button green"></button></span>' +
+                    '</div>' +
+                '</div>'
+            );
+            $('#pv-list').append(pvItem);
+        }
+
+        // 按状态排序“当前状态”页面中的PV列表
+        function sortCurrentStatusList() {
+            var pvList = $('#pv-list .pv-item');
+            pvList.sort(function(a, b) {
+                var aIsRed = $(a).find('.pv-button').hasClass('red');
+                var bIsRed = $(b).find('.pv-button').hasClass('red');
+                return (aIsRed === bIsRed) ? 0 : aIsRed ? -1 : 1;
+            });
+            $('#pv-list').html(pvList);
+        }
+
+        // 实时数据更新处理
         socket.on('update_data', function(data) {
             var variableName = data.variable_name;
             var value = data.value;
+            var buttonClass = value == '1' ? 'red' : 'green';
             var pvItem = $('#pv-' + variableName);
+            var buttonHtml = '<button class="pv-button ' + buttonClass + '"></button>';
+
+            // 如果当前状态页面中没有该PV项，则初始化
             if (pvItem.length === 0) {
-                pvItem = $(
-                    '<div class="list-group-item pv-item" id="pv-' + variableName + '">' +
-                        '<div class="pv-header">' +
-                            '<span class="pv-name">' + variableName + '</span>' +
-                            '<span class="pv-value">' + value + '</span>' +
-                        '</div>' +
-                    '</div>'
-                );
-                $('#pv-list').append(pvItem);
-            } else {
-                pvItem.find('.pv-value').text(value);
+                initializePVItem(variableName);
             }
+            pvItem.find('.pv-value').html(buttonHtml);
 
+            // 更新报警时间
             if (value == '1') {
-                pvItem.addClass('abnormal');
-            } else {
-                pvItem.removeClass('abnormal');
+                var currentTime = new Date().toLocaleString();
+                lastAlarmTimes[variableName] = currentTime;
             }
 
-            updateAbnormalCount();
+            sortCurrentStatusList(); // 排序当前状态页面
+            syncLastAlarmList(); // 同步并更新预警记录页面
+            updateAbnormalCount(); // 更新异常数量
         });
 
+        // 更新异常PV数量
         function updateAbnormalCount() {
             var abnormalCount = 0;
-            $('.pv-value').each(function() {
-                if ($(this).text() == '1') {
+            $('.pv-button').each(function() {
+                if ($(this).hasClass('red')) {
                     abnormalCount++;
                 }
             });
