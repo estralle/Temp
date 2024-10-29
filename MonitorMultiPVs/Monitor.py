@@ -125,7 +125,7 @@ class Monitor:
             while True:
                 with self.data_lock:
                     #print(f"Updating data for {variable_name}")
-                    self.data_collector.update_data(variable_info['data_vector'], variable_info['time_vector'], max_value, min_value, CheckPV=inputpv, Freq=Freq_Collect)
+                    variable_info['data_vector'], variable_info['time_vector']= self.data_collector.update_data(variable_info['data_vector'], variable_info['time_vector'], max_value, min_value, CheckPV=inputpv, Freq=Freq_Collect,vector_length=data_vector_length)
                     #print(f"Data updated for {variable_name}")
                     model_evaluator = self.model_evaluators[variable_name]
                     #print(f"Evaluating anomalies for {variable_name}")

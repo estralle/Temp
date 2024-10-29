@@ -2,6 +2,7 @@ import numpy as np
 import time
 from time import strftime, localtime, sleep
 from epics import caget
+from collections import deque
 
 class DataCollector:
     def __init__(self):
@@ -14,20 +15,25 @@ class DataCollector:
         data_vector, time_vector = self._collect_data(CheckPV, vector_length, Freq, initial=True)
         return data_vector, time_vector
 
-    def update_data(self, data_vector, time_vector, max_value, min_value, CheckPV, Freq):
+    def update_data(self, data_vector, time_vector, max_value, min_value, CheckPV, Freq, vector_length):
         """
         Update the data vector with a new data point.
         """
-        updated_data_vector, updated_time_vector = self._collect_data(CheckPV, 1, Freq, initial=False, 
+        updated_data_vector, updated_time_vector = self._collect_data(CheckPV, vector_length, Freq, initial=False, 
                                                                       data_vector=data_vector, time_vector=time_vector, 
                                                                       max_value=max_value, min_value=min_value)
         return updated_data_vector, updated_time_vector
 
+
+
     def _collect_data(self, CheckPV, vector_length, Freq, initial=True, data_vector=None, time_vector=None, max_value=None, min_value=None):
         if initial:
-            data_vector = np.zeros(vector_length)  # Initialize data vector for initial collection
-            time_vector = []  # Initialize time vector
-
+            data_vector = deque([0] * vector_length, maxlen=vector_length)
+            time_vector = deque()
+        else:
+            data_vector = deque(data_vector, maxlen=vector_length)
+            time_vector = deque(time_vector)
+        #print((f"Before update : data_vector length is {len(data_vector)} detail is {list(data_vector)}, time_vector is {list(time_vector)}"))
         next_target_time = self._get_next_target_time(Freq)
         for i in range(vector_length):
             self._wait_until(next_target_time)
@@ -58,19 +64,19 @@ class DataCollector:
             try:
                 if not initial:
                     data_point = (data_point - min_value) / (max_value - min_value)
-                    data_vector = np.roll(data_vector, -1)
-                    data_vector[-1] = data_point
-                    time_vector = time_vector[1:] + [current_time]
-                else:
-                    data_vector[i] = data_point
+                    data_vector.append(data_point)
                     time_vector.append(current_time)
-                print(f"CheckPV:{CheckPV}; Time: {current_time}, Data: {data_point}")  # For demonstration purposes
+                else:
+                    data_vector.append(data_point)
+                    time_vector.append(current_time)
+                #print(f"CheckPV:{CheckPV}; Time: {current_time}, Data: {data_point}")  # For demonstration purposes
             except Exception as e:
                 print(f"Error processing data: {e}")
-
+                
+            #print(f"data_vector length is {len(data_vector)} detail is {list(data_vector)}, time_vector is {list(time_vector)}")
+            #print(f"CheckPV:{CheckPV}; data_vector is {list(data_vector)}")
             next_target_time += Freq
-
-        return data_vector, time_vector
+        return np.array(data_vector), np.array(time_vector)
 
 
     def _get_next_target_time(self, Freq):
